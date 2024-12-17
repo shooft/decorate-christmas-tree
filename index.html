@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chritmas with JavaScript</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎄</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="-christmas">
+    <main>
+        <p>WEB APIs and JavaSript</p>
+        <h1>Decorate the Christmas tree</h1>
+
+        <section class="christmas-tree">
+            <ul class="tree" id="tree">
+                <li>🌲</li>
+            </ul>
+
+            <ul class="decorations">
+                <li draggable="true" id="star1">⭐️</li>
+                <li draggable="true" id="star2">🌟</li>
+                <li draggable="true" id="star3">✨</li>
+                <li draggable="true" id="star4">💫</li>
+                <li draggable="true" id="present">🎁</li>
+                <li draggable="true" id="heart">💝</li>
+                <li draggable="true" id="diamant">💎</li>
+                <li draggable="true" id="unicorn">🦄</li>
+                <li draggable="true" id="flower">🌸</li>
+                <li draggable="true" id="owl" data-sound="true">🦉</li>
+                <li draggable="true" id="fox">🦊</li>
+                <li draggable="true" id="roaler-skate">🛼</li>
+                <li draggable="true" id="ribbon">🎀</li>
+                <li draggable="true" id="croissant">🥐</li>
+                <li draggable="true" id="space-invader" data-sound="true">👾</li>
+            </ul>
+        </section>
+
+        <button data-playing="false" role="switch" aria-checked="false">
+            <span>Play 🎶</span>
+        </button>
+    </main>
+
+    <!-- source: https://pixabay.com/music/christmas-magic-christmas-night-264068/ -->
+    <audio src="audio/magic-christmas-night-264068.mp3">Magic Christmas Night background tune</audio>
+</body>
+</html>

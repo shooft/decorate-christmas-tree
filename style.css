@@ -1,0 +1,207 @@
+body.christmas {
+    --_bgc:var(--green-dark);
+    background-color:var(--_bgc);
+    background: radial-gradient(
+        circle at center,
+        var(--green-neutral) 0%,
+        var(--green-dark) 50%,
+        var(--green-darkest) 100%
+    ) no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+body {
+    /* Base HSL values */
+    --red-h: 359;
+    --red-s: 100%;
+
+    --green-h: 162;
+    --green-s: 100%;
+
+    --gold-h: 51;
+    --gold-s: 100%;
+
+    --white-h: 0;
+    --white-s: 0%;
+
+    /* Ligntness variations */
+    --darkest: 15%;
+    --dark: 30%;
+    --neutral: 50%; 
+    --light: 70%;
+    --lightest: 90%;
+
+
+    /* White variations */
+    --white-darkest: 90%;
+    --white-darker: 92%;
+    --white-neutral: 94%;
+    --white-lighter: 96%;
+    --white-lightest: 100%;
+
+    /* Red variations using HSL values */
+    --red-darkest: hsl(var(--red-h), var(--red-s), var(--darkest));
+    --red-dark: hsl(var(--red-h), var(--red-s), var(--dark));
+    --red-neutral: hsl(var(--red-h), var(--red-s), var(--neutral));
+    --red-light: hsl(var(--red-h), var(--red-s), var(--light));
+    --red-lightest: hsl(var(--red-h), var(--red-s), var(--lightest));
+
+    /* Green variations using HSL values */
+    --green-darkest: hsl(var(--green-h), var(--green-s), var(--darkest));
+    --green-dark: hsl(var(--green-h), var(--green-s), var(--dark));
+    --green-neutral: hsl(var(--green-h), var(--green-s), var(--neutral));
+    --green-light: hsl(var(--green-h), var(--green-s), var(--light));
+    --green-lightest: hsl(var(--green-h), var(--green-s), var(--lightest));
+
+    /* Gold variations using HSL values */
+    --gold-darkest: hsl(var(--gold-h), var(--gold-s), var(--darkest));
+    --gold-dark: hsl(var(--gold-h), var(--gold-s), var(--dark));
+    --gold-neutral: hsl(var(--gold-h), var(--gold-s), var(--neutral));
+    --gold-light: hsl(var(--gold-h), var(--gold-s), var(--light));
+    --gold-lightest: hsl(var(--gold-h), var(--gold-s), var(--lightest));
+
+    /* White variations using HSL values */
+    --white-darkest: hsl(var(--white-h), var(--white-s), var(--white-darkest));
+    --white-darker: hsl(var(--white-h), var(--white-s), var(--white-darker));
+    --white-neutral: hsl(var(--white-h), var(--white-s), var(--white-neutral));
+    --white-lighter: hsl(var(--white-h), var(--white-s), var(--white-lighter));
+    --white-lightest: hsl(var(--white-h), var(--white-s), var(--white-lightest));
+
+    --bgc:var(--white-neutral);
+    color: var(--green-darkest);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: var(--base-font-size);
+    padding:2em;
+    display:grid;
+}   
+
+body.christmas h1 {
+    --_position:0;
+}
+
+h1, h2 {
+    --_position:-200vh;
+    font-family: 'Mountains of Christmas', cursive;
+    background-image: linear-gradient(var(--green-darkest) 5%, var(--green-darkest) 80%);
+    color: transparent;
+    background-clip: text;
+    font-size: clamp(1rem, 5vw, 8rem);
+    text-align: center;
+    margin:0;
+    text-shadow: rgba(145,145,145,0.2) 1px 1px 1px;
+    translate: 0 var(--_position);
+    transition: .25s;
+    transition-delay: .25s;
+}
+
+main {
+    place-self: center;
+    display:grid;
+    justify-items: center;
+}
+
+body.christmas main p {
+    opacity:0;
+    scale: 0;
+}
+
+main p {
+    transition:.1s;
+    opacity:1;
+}
+
+body.christmas .christmas-tree {
+    --_opacity:1;
+}
+
+body.christmas .decorations {
+    --_position:-5rem;
+}
+
+.christmas-tree {
+    --_opacity:0;
+    display:grid;
+    justify-items: center;
+    padding: 1rem 3rem 5rem;
+    position: relative;
+    transition:.25s;
+    opacity:var(--_opacity);
+
+    background: hsl(var(--red-h), var(--red-s), var(--red-l-light));
+
+    .tree {
+        position: relative;
+        margin:0;
+        padding:0 0;
+        list-style: none;
+
+        li:first-child {
+            --_size:40vmin;
+        }
+
+        & li {
+            --_size:4vmin;
+            font-size: var(--_size);
+            top:var(--offset-y);
+            left:var(--offset-x);
+        }
+    }
+    
+    .decorations {
+        --_position:-100vh;
+        position:absolute;
+        bottom:var(--_position);
+        left:center;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        place-items:center;
+        gap: 1rem;
+        transition:.25s;
+        transition-delay:.5s;
+        padding:1rem;
+        border-radius:.5rem;
+        list-style: none;
+        
+    }
+
+    .decorations li {
+        --_default-offset:calc(50% - 0.82rem);
+        --_spread:2.5rem;
+        font-size: 4vmin;
+        top:var(--offset-y, 1rem);
+        left:var(--offset-x, var(--_default-offset));
+        cursor: grab;
+    }
+}
+
+body.audio-control button {
+    --_opacity:1;
+}
+
+button {
+    --_opacity:0;
+    --_brdr-color:var(--gold-neutral);
+    --_bg-color:var(--gold-lightest);
+    --_color: var(--gold-darkest);
+    all:unset;
+    border-radius:.5rem;
+    padding:.25rem .5rem;
+    border:3px solid var(--_brdr-color);
+    background:var(--_bg-color);
+    color:var(--_color);
+    transition:.15s;
+    position: fixed;
+    bottom: 1rem;
+    right:2rem;
+    z-index:1000;
+    opacity:var(--_opacity);
+
+    &:hover,
+    &:focus-visible {
+        --_brdr-color:var(--green-darkest);
+        --_bg-color:var(--green-lightest);
+        --_color:var(--green-darkest);
+        translate: 2px 1px;
+    }
+
+}

@@ -152,16 +152,16 @@ body.christmas .decorations {
         position:absolute;
         bottom:var(--_position);
         left:center;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        place-items:center;
+        width:calc(20vw + 4em);
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:center;
         gap: 1rem;
-        transition:.25s;
-        transition-delay:.5s;
+        /* transition:.25s; */
+        /* transition-delay:.5s; */
         padding:1rem;
-        border-radius:.5rem;
+        /* border-radius:.5rem; */
         list-style: none;
-        
     }
 
     li {

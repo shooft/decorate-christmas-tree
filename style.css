@@ -164,15 +164,47 @@ body.christmas .decorations {
         
     }
 
-    .decorations li {
+    li {
         --_default-offset:calc(50% - 0.82rem);
         --_spread:2.5rem;
         font-size: 4vmin;
         top:var(--offset-y, 1rem);
         left:var(--offset-x, var(--_default-offset));
         cursor: grab;
+
+        view-transition-class: deco;
     }
+
+    #star1 { view-transition-name: star1; }
+    #star2 { view-transition-name: star2; }
+    #star3 { view-transition-name: star3; }
+    #star4 { view-transition-name: star4; }
+    #present { view-transition-name: present; }
+    #heart { view-transition-name: heart; }
+    #diamant { view-transition-name: diamant; }
+    #unicorn { view-transition-name: unicorn; }
+    #flower { view-transition-name: flower; }
+    #owl { view-transition-name: owl; }
+    #fox { view-transition-name: fox; }
+    #roaler-skate { view-transition-name: roaler-skate; }
+    #ribbon { view-transition-name: ribbon; }
+    #croissant { view-transition-name: croissant; }
+    #space-invader { view-transition-name: space-invader; }
+
+    
 }
+
+::view-transition-group(.deco) { 
+    animation-duration: 1s;
+    animation-timing-function: linear(
+        0, 0.218 2.1%, 0.862 6.5%, 1.114, 1.296 10.7%, 1.346, 1.37 12.9%, 1.373,
+        1.364 14.5%, 1.315 16.2%, 1.032 21.8%, 0.941 24%, 0.891 25.9%, 0.877,
+        0.869 27.8%, 0.87, 0.882 30.7%, 0.907 32.4%, 0.981 36.4%, 1.012 38.3%, 1.036,
+        1.046 42.7% 44.1%, 1.042 45.7%, 0.996 53.3%, 0.988, 0.984 57.5%, 0.985 60.7%,
+        1.001 68.1%, 1.006 72.2%, 0.998 86.7%, 1
+    );
+}
+
 
 body.audio-control button {
     --_opacity:1;

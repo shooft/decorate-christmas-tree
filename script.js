@@ -94,7 +94,7 @@ function dragAndDropAPI(){
         const offsetY = Math.round(event.clientY) - Math.round(dropAreaRect.top) - 10 
 
         decoration.style.setProperty('--offset-x', `${offsetX}px`)
-        decoration.style.setProperty('--offset-y', `${offsetY}px`)        
+        decoration.style.setProperty('--offset-y', `${offsetY}px`)     
       }
     })
 
